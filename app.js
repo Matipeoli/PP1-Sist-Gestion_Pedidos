@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectedDate = dayCell.dataset.date;
             });
             calendarGrid.appendChild(dayCell);
+            const selectedDayLabel = document.getElementById('selected-day-label');
+            selectedDayLabel.textContent = `${i}`;
         }
     }
 
