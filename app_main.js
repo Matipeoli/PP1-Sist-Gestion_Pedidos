@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCalendar(month, year) {
         calendarGrid.innerHTML = ''; // Limpiar el calendario existente
-
+        
         const daysOfWeek = ['DOM', 'LUN', 'MAR', 'MIE', 'JUE', 'VIE', 'SAB'];
         daysOfWeek.forEach(day => {
             const dayHeader = document.createElement('div');
@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Muestra el dia seleccionado en el calendario
                 const selectedDayLabel = document.getElementById('selected-day-label');
                 selectedDayLabel.textContent = i;
+
+                //Muestra el dia de la semana
+                mostrarDiaDeLaSemana(selectedDate)
             });
             calendarGrid.appendChild(dayCell);
 
@@ -81,3 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCalendar(parseInt(monthSelect.value), parseInt(yearSelect.value));
 
 });
+
+function mostrarDiaDeLaSemana(selectedDate){
+    const diasDeLaSemana = ["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"];
+    document.getElementById('dayOfTheWeek').textContent =  diasDeLaSemana[new Date(selectedDate).getDay()]
+}

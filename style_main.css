@@ -37,6 +37,8 @@ body {
   margin: 0;
 }
 
+
+
 .user-info {
   display: flex;
   align-items: center;
@@ -125,7 +127,6 @@ body {
   background-color: #333;
   border-radius: 10px;
   padding: 20px;
-  width: 300px;
   flex-shrink: 0;
 }
 
@@ -220,4 +221,63 @@ body {
   right: 10px;
   color: #7ed321;
   font-size: 20px;
+}
+
+.cardContainer {
+  display: flex;         
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  min-width: 20rem;             
+  max-width: 20rem;        
+  gap: 1rem;
+  cursor: pointer;
+  color:black;
+}
+
+.cardContainer img {
+  width: 35%;      
+  aspect-ratio: 1 / 1;     
+  object-fit: cover;
+  border-radius: 0.8rem;
+  flex-shrink: 0;  
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;        
+}
+
+.cardTitle {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  word-wrap: break-word; 
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  text-align: left;
+  word-wrap: break-word;   
+}
+
+.cards{
+    display: flex;
+    gap: 0.3rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.dragging{
+    opacity: 1;
+    scale: 0.8;
+    cursor: grab;
+}
+
+.checkedCard{
+    border: 2px,solid, rgb(0, 255, 0);
 }

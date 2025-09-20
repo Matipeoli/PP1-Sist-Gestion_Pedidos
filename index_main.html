@@ -58,45 +58,15 @@
 
             <!-- Vincularlo al calendario -->
             <section class="menu-display">
-                <div class="day-selector">
-                    <select id="day-of-week-select">
-                        <option value="LUNES">LUNES</option>
-                        <option value="MARTES">MARTES</option>
-                        <option value="MIERCOLES">MIERCOLES</option>
-                        <option value="JUEVES">JUEVES</option>
-                        <option value="VIERNES">VIERNES</option>
-                        <option value="SABADO">SABADO</option>
-                        <option value="DOMINGO">DOMINGO</option>
-                    </select>
-                </div>
-                <div class="menu-items" id="menu-items">
-                    <!-- AGREGAR Y CONTROLAR DIV Y CLASS DEL MODULO DEL MENÚ -->
-                    <div class="menu-card">
-                        <h3>Pasta con salsa boloñesa</h3>
-                        <p>Descripción de la pasta...</p>
-                        <img src="pasta.jpg" alt="Pasta">
-                    </div>
-                    <div class="menu-card">
-                        <h3>Milanesa de Carne</h3>
-                        <p>Descripción de la milanesa...</p>
-                        <img src="milanesa.jpg" alt="Milanesa">
-                    </div>
-                    <div class="menu-card selected">
-                        <h3>Pollo al horno con puré de papas y verduras salteadas</h3>
-                        <p>Descripción del pollo...</p>
-                        <img src="pollo.jpg" alt="Pollo">
-                        <span class="selected-icon">✓</span>
-                    </div>
-                    <div class="menu-card">
-                        <h3>Tortilla de papas con ensalada mixta</h3>
-                        <p>Descripción de la tortilla...</p>
-                        <img src="tortilla.jpg" alt="Tortilla">
-                    </div>
-                </div>
+                <div class="day-selector" id="dayOfTheWeek">--</div>
+                <div class="cards" id="cardContainer"></div>
             </section>
         </main>
     </div>
+    
     <script src="app_main.js"></script> <!-- Enlace al archivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="cards.js"></script>
 </body>
 
 </html>
