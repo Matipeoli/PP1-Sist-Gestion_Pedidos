@@ -82,12 +82,17 @@ body {
   margin-top: 10px;
 }
 
-.calendar-cell {
+.calendar-cell,.calendar-cell-disabled {
   text-align: center;
   padding: 10px;
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.2s ease-in-out;
+}
+
+.calendar-cell-disabled{
+  color: gray;
+  cursor: no-drop;
 }
 
 .calendar-cell:hover {
