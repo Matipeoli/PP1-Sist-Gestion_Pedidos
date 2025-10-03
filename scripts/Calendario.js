@@ -91,7 +91,7 @@ class Calendario {
                     dayCell.classList.add('selected');
                     this.selectedDate = dayCell.dataset.date;
 
-                    document.getElementById('diaNumero').textContent = i;
+                    document.getElementById('selected-day-label').textContent = i;
                     this.mostrarDiaDeLaSemana(this.selectedDate);
                 });
             }
