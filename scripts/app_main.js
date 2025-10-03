@@ -1,3 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    new Calendario('month-select', 'year-select', 'calendar-grid', 'confirm-button');
+const menuBtn = document.getElementById('menu-btn');
+const sidebar = document.getElementById('sidebar');
+
+menuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
 });
