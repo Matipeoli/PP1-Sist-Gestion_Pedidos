@@ -1,9 +1,9 @@
 class Calendario {
-    constructor(monthSelectId, yearSelectId, gridId, confirmButtonId) {
+    constructor(monthSelectId, yearSelectId, gridId) {
         this.monthSelect = document.getElementById(monthSelectId);
         this.yearSelect = document.getElementById(yearSelectId);
         this.calendarGrid = document.getElementById(gridId);
-        this.confirmButton = document.getElementById(confirmButtonId);
+        
         this.selectedDate = null;
         this.fechaRango1 = null;
         this.fechaRango2 = null;
@@ -32,13 +32,6 @@ class Calendario {
             this.renderCalendar(parseInt(this.monthSelect.value), parseInt(this.yearSelect.value));
         });
 
-        this.confirmButton.addEventListener('click', () => {
-            if (this.selectedDate) {
-                alert(`Fecha seleccionada: ${this.selectedDate}`);
-            } else {
-                alert('Por favor, selecciona una fecha.');
-            }
-        });
     }
 
     renderCalendar(month, year) {
@@ -98,7 +91,7 @@ class Calendario {
                     dayCell.classList.add('selected');
                     this.selectedDate = dayCell.dataset.date;
 
-                    document.getElementById('selected-day-label').textContent = i;
+                    document.getElementById('diaNumero').textContent = i;
                     this.mostrarDiaDeLaSemana(this.selectedDate);
                 });
             }
@@ -109,10 +102,8 @@ class Calendario {
 
     mostrarDiaDeLaSemana(selectedDate) {
         const diasDeLaSemana = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
-        document.getElementById('dayOfTheWeek').textContent =
-            diasDeLaSemana[new Date(selectedDate).getDay()];
+        document.getElementById('dayOfTheWeek').textContent = diasDeLaSemana[new Date(selectedDate).getDay()];
 
-            console.log(selectedDate)
         //Mostrar cards
         this.cards.showCards(selectedDate)
     }
