@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Fecha y Menú</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo"> i2T<span>ASTE</span> </h1>
+            <div class="user-info">
+                <!-- Vincula e importa desde la BD user -->
+                <span>Manuel</span>
+                <img src="user-icon.png" alt="Usuario">
+                <button class="menu-toggle">☰</button>
+            </div>
+        </header>
+
+        <!-- Se debe corresponder el día de las cards con el día del calendario -->
+        <main class="main-content">
+            <aside class="calendar-widget">
+                <h2>Fecha</h2>
+                <div class="month-year-selector">
+                    <select id="month-select">
+                        <option value="0">Enero</option>
+                        <option value="1">Febrero</option>
+                        <option value="2">Marzo</option>
+                        <option value="3">Abril</option>
+                        <option value="4">Mayo</option>
+                        <option value="5">Junio</option>
+                        <option value="6">Julio</option>
+                        <option value="7">Agosto</option>
+                        <option value="8">Septiembre</option>
+                        <option value="9">Octubre</option>
+                        <option value="10">Noviembre</option>
+                        <option value="11">Diciembre</option>
+                    </select>
+                    <select id="year-select">
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+                <div class="selected-day-box">
+                    <span id="selected-day-label">--</span>
+                </div>
+
+                <span id="selected-day-label" style="margin-left:15px; font-weight:bold; color:green;"></span>
+
+                <div class="calendar-grid" id="calendar-grid"></div>
+
+                <button id="confirm-button">CONFIRMAR</button>
+            </aside>
+
+            <!-- Vincularlo al calendario -->
+            <section class="menu-display">
+                <div class="day-selector" id="dayOfTheWeek">--</div>
+                <div class="cards" id="cardContainer"></div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="app_main.js"></script> <!-- Enlace al archivo JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="Tarjetas.js"></script>
+    <script src="Calendario.js"></script>
+</body>
+
+</html>
