@@ -1,5 +1,5 @@
 class Tarjetas {
-    constructor(containerId, modo) {
+    constructor(containerId,modo) {
         this.id = 0;
         this.lastId = "";
         this.container = document.getElementById(containerId);

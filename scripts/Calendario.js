@@ -14,7 +14,7 @@ class Calendario {
         this.modo = modo;
 
         //Objeto de cards
-        this.cards = new Tarjetas("cardContainer");
+        this.cards = new Tarjetas("cardContainer",modo);
 
         const hoy = new Date();
         const fechaHoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
@@ -108,9 +108,9 @@ class Calendario {
     mostrarDiaDeLaSemana(selectedDate) {
         const diasDeLaSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
         document.getElementById('dayOfTheWeek').textContent = diasDeLaSemana[new Date(selectedDate).getDay()];
-
+        debugger
         //Mostrar cards
-        if(this.mode == "seleccionar")
+        if(this.modo == "seleccionar")
             this.cards.showCards(selectedDate)
         else
             this.cards.showCardsMenu(selectedDate);
