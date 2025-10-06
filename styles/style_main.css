@@ -82,7 +82,8 @@ body {
   margin-top: 10px;
 }
 
-.calendar-cell,.calendar-cell-disabled {
+.calendar-cell,
+.calendar-cell-disabled {
   text-align: center;
   padding: 10px;
   cursor: pointer;
@@ -90,7 +91,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.calendar-cell-disabled{
+.calendar-cell-disabled {
   color: gray;
   cursor: no-drop;
 }
@@ -229,60 +230,105 @@ body {
 }
 
 .cardContainer {
-  display: flex;         
+  display: flex;
   align-items: flex-start;
   background-color: white;
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  min-width: 20rem;             
-  max-width: 20rem;        
+  min-width: 20rem;
+  max-width: 20rem;
   gap: 1rem;
   cursor: pointer;
-  color:black;
+  color: black;
 }
 
 .cardContainer img {
-  width: 35%;      
-  aspect-ratio: 1 / 1;     
+  width: 35%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.8rem;
-  flex-shrink: 0;  
+  flex-shrink: 0;
 }
 
 .cardText {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;        
+  width: 100%;
 }
 
 .cardTitle {
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: left;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
 
 .cardDescription {
   font-size: 0.9rem;
   text-align: left;
-  word-wrap: break-word;   
+  word-wrap: break-word;
 }
 
-.cards{
-    display: flex;
-    gap: 0.3rem;
-    width: 100%;
-    flex-wrap: wrap;
+.cards {
+  display: flex;
+  gap: 0.3rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
-.dragging{
-    opacity: 1;
-    scale: 0.8;
-    cursor: grab;
+.dragging {
+  opacity: 1;
+  scale: 0.8;
+  cursor: grab;
 }
 
-.checkedCard{
-    border: 2px,solid, rgb(0, 255, 0);
+.checkedCard {
+  border: 2px, solid, rgb(0, 255, 0);
+}
+
+#iframeMain {
+  flex: 1;
+  width: 100%;
+  border: none;
+}
+
+.botonAgregar {
+  color: white;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 10%;
+  background-color: #7ed321;
+  border: none;
+  font-size: 2rem;
+  text-align: center;
+
+}
+
+.botonAgregarDiv {
+  min-width: 20rem;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+}
+
+.ventanaAgregar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(204, 204, 204);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 10px;
+  z-index: 1000;
+  width: 40%;
+  height: 50%;
+  border: none;
+  border-radius: 0.3rem;
+
 }

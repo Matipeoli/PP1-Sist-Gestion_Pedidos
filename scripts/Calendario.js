@@ -1,17 +1,21 @@
 class Calendario {
-    constructor(monthSelectId, yearSelectId, gridId) {
+    constructor(monthSelectId, yearSelectId, gridId, containerId,modo) {
+        this.container = document.getElementById(containerId);
+        this.dibujarCalendario();
+
         this.monthSelect = document.getElementById(monthSelectId);
         this.yearSelect = document.getElementById(yearSelectId);
         this.calendarGrid = document.getElementById(gridId);
-        
+
         this.selectedDate = null;
         this.fechaRango1 = null;
         this.fechaRango2 = null;
         this.viernes = false;
-        
+        this.modo = modo;
+
         //Objeto de cards
         this.cards = new Tarjetas("cardContainer");
-        
+
         const hoy = new Date();
         const fechaHoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
 
@@ -21,6 +25,7 @@ class Calendario {
         this.determinarFechaRango();
         this.initListeners();
         this.renderCalendar(parseInt(this.monthSelect.value), parseInt(this.yearSelect.value));
+
     }
 
     initListeners() {
@@ -101,11 +106,14 @@ class Calendario {
     }
 
     mostrarDiaDeLaSemana(selectedDate) {
-        const diasDeLaSemana = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+        const diasDeLaSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
         document.getElementById('dayOfTheWeek').textContent = diasDeLaSemana[new Date(selectedDate).getDay()];
 
         //Mostrar cards
-        this.cards.showCards(selectedDate)
+        if(this.mode == "seleccionar")
+            this.cards.showCards(selectedDate)
+        else
+            this.cards.showCardsMenu(selectedDate);
     }
 
     desactivarCelda(dayCell) {
@@ -132,6 +140,42 @@ class Calendario {
         this.fechaRango2.setDate(this.fechaRango2.getDate() + 7);
 
         this.viernes = true;
+    }
+
+    dibujarCalendario() {
+        const calendarHTML = `
+            <aside class="calendar-widget">
+                <h2>Fecha</h2>
+                <div class="month-year-selector">
+                    <select id="month-select">
+                        <option value="0">Enero</option>
+                        <option value="1">Febrero</option>
+                        <option value="2">Marzo</option>
+                        <option value="3">Abril</option>
+                        <option value="4">Mayo</option>
+                        <option value="5">Junio</option>
+                        <option value="6">Julio</option>
+                        <option value="7">Agosto</option>
+                        <option value="8">Septiembre</option>
+                        <option value="9">Octubre</option>
+                        <option value="10">Noviembre</option>
+                        <option value="11">Diciembre</option>
+                    </select>
+                    <select id="year-select">
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+                <div class="selected-day-box">
+                    <span id="selected-day-label">--</span>
+                </div>
+                <span id="selected-day-label" style="margin-left:15px; font-weight:bold; color:green;"></span>
+                <div class="calendar-grid" id="calendar-grid"></div>
+                <button id="confirm-button">CONFIRMAR</button>
+            </aside>
+            `;
+
+        this.container.innerHTML = calendarHTML;
     }
 }
 
