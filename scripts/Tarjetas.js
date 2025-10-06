@@ -107,30 +107,50 @@ class Tarjetas {
         button.textContent = "+";
         button.addEventListener("click", () => {
             const ventana = document.createElement("div");
+            ventana.id = "ventana";
             ventana.textContent = "Soy una ventana nueva";
 
             // Estilo básico para que se vea como una ventana arriba
-            ventana.className = "ventanaAgregar";
+            
             const html = `
-            <div> 
+          <div class="ventanaAgregar">
 
-                <div>
-                    <label>Foto:</label>
-                    <input type="file" name="imagen" accept="image/*">
-                </div>
-                
-                <div>
-                    <label>Titulo:</label>
-                    <input type="text" name="titulo" placeholder="Escribe un título">
-                </div>
-                
-                <div>
-                    <label>Descripción:</label>
-                    <input type="text" name="descripcion" placeholder="Escribe una descripción">
-                </div>
+  
+  <span style="position: absolute; top: 10px; right: 14px; font-weight: bold; font-size: 18px; color: #555; cursor: pointer;" onclick="document.getElementById('ventana').remove()">×</span>
 
-                <button type="submit">Enviar</button>   
-            </div> `
+  
+  <div style="flex: 0 0 180px; display: flex; justify-content: center; align-items: flex-start;">
+    <label style="width: 180px; height: 160px; border: 2px dashed #999; border-radius: 10px; background: #f0f0f0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #666; font-size: 14px; cursor: pointer; transition: all 0.3s ease;">
+      <span style="margin-bottom: 6px;"></span>
+      <span>Subir imagen</span>
+      <input type="file" name="imagen" accept="image/*" style="display: none;">
+    </label>
+  </div>
+
+  
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 14px;">
+    
+    
+    <label style="width: 100%;">
+      <input type="text" name="titulo" placeholder="Título del elemento" 
+        style="width: 100%; border: 2px solid #ccc; border-radius: 8px; padding: 10px; font-size: 15px; box-sizing: border-box; transition: 0.2s;">
+    </label>
+
+    
+    <label style="width: 100%;">
+      <textarea name="descripcion" placeholder="Descripción..." 
+        style="width: 100%; height: 110px; border: 2px solid #ccc; border-radius: 8px; padding: 10px; font-size: 15px; box-sizing: border-box; resize: none; transition: 0.2s;"></textarea>
+    </label>
+
+    
+    <button type="button" 
+      style="align-self: center; margin-top: 8px; border: none; background: #7ed321; color: white; font-weight: bold; font-size: 15px; padding: 10px 26px; border-radius: 8px; cursor: pointer; box-shadow: 0 3px 6px rgba(0,0,0,0.2); transition: all 0.2s;">
+      Agregar
+    </button>
+  </div>
+</div>
+
+ `
 
             ventana.innerHTML = html;
             document.body.appendChild(ventana);
