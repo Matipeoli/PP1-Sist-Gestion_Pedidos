@@ -108,7 +108,7 @@ class Calendario {
     mostrarDiaDeLaSemana(selectedDate) {
         const diasDeLaSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
         document.getElementById('dayOfTheWeek').textContent = diasDeLaSemana[new Date(selectedDate).getDay()];
-        debugger
+        
         //Mostrar cards
         if(this.modo == "seleccionar")
             this.cards.showCards(selectedDate)

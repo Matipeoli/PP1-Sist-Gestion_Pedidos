@@ -113,20 +113,21 @@ class Tarjetas {
             ventana.className = "ventanaAgregar";
             const html = `
             <div> 
-                <label>
-                    Foto:
+
+                <div>
+                    <label>Foto:</label>
                     <input type="file" name="imagen" accept="image/*">
-                </label>
+                </div>
                 
-                <label>
-                    Título:
+                <div>
+                    <label>Titulo:</label>
                     <input type="text" name="titulo" placeholder="Escribe un título">
-                </label>
+                </div>
                 
-                <label>
-                    Descripción:
+                <div>
+                    <label>Descripción:</label>
                     <input type="text" name="descripcion" placeholder="Escribe una descripción">
-                </label>
+                </div>
 
                 <button type="submit">Enviar</button>   
             </div> `
